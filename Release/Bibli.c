@@ -74,7 +74,7 @@ int ft_atoi(char *str)
     return (num  * neg);
 }
 
-void ft_swapnombre(int *a, int *b)
+void ft_swapNombre(int *a, int *b)
 {
     int tmp;
 
@@ -105,4 +105,16 @@ void ft_implementationPhrase(char *source, char *destination)
     }
 }
 
-char *ft_toutMajuscule(char *str);
+void *ft_toutMajuscule(char *str)
+{
+  while (*str != '\0')
+  {
+    if ((*str >= 'A' && *str <= 'Z') || (*str < 'A' || *str > 'z') || (*str > 'Z' && *str < 'a'))
+        str++;
+    else
+    {
+      *str -= 32;
+      str++;
+    }
+  }
+}
